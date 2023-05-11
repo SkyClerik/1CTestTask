@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757d0f44b5759d44a95995886c4ee7eb, type: 3}
+  m_Name: ConsumableIconsData
+  m_EditorClassIdentifier: 
+  _credit: {fileID: 21300000, guid: 188baaf79eabb65438ef63989558e8c6, type: 3}
+  _coin: {fileID: 21300000, guid: ce5793828b6708b48b659030b9602a6f, type: 3}
+  _creditColor: {r: 0, g: 0.78431374, b: 0.98039216, a: 1}
+  _coinColor: {r: 0.9607843, g: 0.77254903, b: 0.023529412, a: 1}

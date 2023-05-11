@@ -1,0 +1,28 @@
+.credit-color {
+    -unity-background-image-tint-color: rgba(0, 184, 255, 255);
+    color: rgba(0, 184, 255, 255);
+}
+
+.coin-color {
+    color: rgba(255, 111, 0, 255);
+    -unity-background-image-tint-color: rgba(255, 111, 0, 255);
+}
+
+.credit-button-color {
+    background-color: rgba(0, 184, 255, 255);
+}
+
+.coin-button-color {
+    background-color: rgba(255, 112, 0, 255);
+}
+
+.description-label {
+    font-size: 16px;
+    white-space: normal;
+    -unity-text-align: upper-center;
+    color: rgba(219, 219, 219, 255);
+}
+
+.label-color {
+    color: rgba(242, 242, 242, 255);
+}

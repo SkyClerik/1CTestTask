@@ -1,0 +1,49 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Shop/Shop.uss?fileID=7433441132597879392&amp;guid=eef3318a12e2edb46b13e0cb1af4f33d&amp;type=3#Shop" />
+    <ui:VisualElement picking-mode="Ignore" style="position: absolute; width: 800px; height: 500px; top: 50%; left: 50%; translate: -400px -250px;">
+        <ui:VisualElement name="ButtonBackground" picking-mode="Ignore" style="background-image: resource(&apos;Border&apos;); background-color: rgba(56, 56, 56, 0.95); -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4; -unity-background-image-tint-color: rgb(168, 168, 168); -unity-background-scale-mode: stretch-to-fill; position: relative; flex-grow: 1; flex-direction: column; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px;">
+            <ui:VisualElement name="Up" picking-mode="Ignore" style="padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+                <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; min-height: 100px;">
+                    <ui:Label text="Обмен валюты" display-tooltip-when-elided="true" picking-mode="Ignore" style="font-size: 60px; -unity-text-align: middle-left; flex-shrink: 0; flex-grow: 0; margin-left: 0; color: rgb(255, 255, 255); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+                </ui:VisualElement>
+                <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; min-height: 100px; align-items: center;">
+                    <ui:VisualElement picking-mode="Ignore" name="CoinIcon" class="coin-color" style="background-image: resource(&apos;Coin&apos;); width: 48px; height: 48px;" />
+                    <ui:Label text="1" display-tooltip-when-elided="true" picking-mode="Ignore" class="label-color" style="font-size: 50px; -unity-text-align: middle-center; flex-shrink: 0; margin-left: 0; color: rgb(224, 224, 224); margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; flex-grow: 0;" />
+                    <ui:Label text="=" display-tooltip-when-elided="true" picking-mode="Ignore" class="label-color" style="font-size: 50px; -unity-text-align: middle-center; flex-shrink: 0; flex-grow: 0; margin-left: 0; color: rgb(224, 224, 224); margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                    <ui:VisualElement picking-mode="Ignore" name="CreditIcon" class="credit-color" style="background-image: resource(&apos;Credit&apos;); width: 48px; height: 48px;" />
+                    <ui:Label text="12" display-tooltip-when-elided="true" picking-mode="Ignore" name="CoinToCreditRate" class="label-color" style="font-size: 50px; -unity-text-align: middle-center; flex-shrink: 0; flex-grow: 0; margin-left: 0; color: rgb(224, 224, 224); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Line" picking-mode="Ignore" style="background-image: none; width: 100%; height: 2px; background-color: rgba(87, 87, 87, 0.95); position: relative;" />
+            <ui:VisualElement name="Center" picking-mode="Ignore" style="padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+                <ui:VisualElement picking-mode="Ignore" style="flex-direction: row;">
+                    <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-grow: 1; flex-shrink: 1; align-items: center; justify-content: flex-start;">
+                        <ui:VisualElement name="CoinIcon" picking-mode="Ignore" class="coin-color" style="background-image: resource(&apos;Coin&apos;); min-width: 32px; min-height: 32px; flex-shrink: 0;" />
+                        <ui:Label text="458 548" display-tooltip-when-elided="true" name="CoinValue" picking-mode="Ignore" class="coin-color" style="font-size: 20px; -unity-text-align: middle-left;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-shrink: 1; flex-grow: 1; justify-content: flex-start; align-items: center;">
+                        <ui:VisualElement name="CreditIcon" picking-mode="Ignore" class="credit-color" style="background-image: resource(&apos;Credit&apos;); flex-shrink: 1; justify-content: flex-start; align-items: auto; width: 40px; height: 40px;" />
+                        <ui:Label text="30 800" display-tooltip-when-elided="true" name="CreditValue" picking-mode="Ignore" class="credit-color" style="font-size: 20px; -unity-text-align: middle-left;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement picking-mode="Ignore" style="flex-direction: row;">
+                    <ui:TextField value="filler text" text="10" name="ValueField" is-delayed="false" style="width: 300px; flex-grow: 1; font-size: 50px;" />
+                    <ui:Label text="=" display-tooltip-when-elided="true" picking-mode="Ignore" class="label-color" style="font-size: 70px; -unity-text-align: middle-center; flex-shrink: 0; flex-grow: 0; margin-left: 0; color: rgb(224, 224, 224); margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                    <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; flex-shrink: 1; flex-grow: 1; align-items: center;">
+                        <ui:VisualElement picking-mode="Ignore" name="CreditIcon" class="credit-color" style="background-image: resource(&apos;Credit&apos;); flex-shrink: 1; flex-grow: 0; align-items: center; justify-content: center; min-width: 70px; min-height: 70px;" />
+                        <ui:Label text="120" display-tooltip-when-elided="true" picking-mode="Ignore" name="CreditResultValue" class="label-color" style="font-size: 50px; -unity-text-align: middle-left; color: rgb(255, 255, 255);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Line" picking-mode="Ignore" style="background-image: none; width: 100%; height: 2px; background-color: rgba(87, 87, 87, 0.95); position: relative;" />
+            <ui:VisualElement name="Bottom" picking-mode="Ignore" style="padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+                <ui:VisualElement picking-mode="Ignore" style="flex-direction: row; justify-content: flex-start; align-items: stretch;">
+                    <ui:VisualElement picking-mode="Ignore" style="width: 60%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 35px; padding-top: 35px; padding-bottom: 35px; flex-direction: row; height: 100px; justify-content: flex-start; align-items: center;">
+                        <ui:Button display-tooltip-when-elided="true" name="ExchangeButton" text="ОБМЕНЯТЬ" class="coin-button-color" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 10px; margin-top: 0; margin-bottom: 0; font-size: 35px; background-image: resource(&apos;Border&apos;); -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4; -unity-background-image-tint-color: rgb(0, 0, 0); color: rgb(0, 0, 0); flex-grow: 1; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; flex-shrink: 0; height: 70px; min-width: 256px;" />
+                        <ui:Button display-tooltip-when-elided="true" name="CancelButton" text="ОТМЕНА" style="background-color: rgb(0, 0, 0); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; background-image: resource(&apos;Border&apos;); -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4; color: rgb(255, 255, 255); font-size: 35px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; margin-left: 10px; margin-right: 0; margin-top: 0; margin-bottom: 0; flex-grow: 1; height: 65px; min-width: 256px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

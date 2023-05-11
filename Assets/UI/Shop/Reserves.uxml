@@ -1,0 +1,41 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Shop/Shop.uss?fileID=7433441132597879392&amp;guid=eef3318a12e2edb46b13e0cb1af4f33d&amp;type=3#Shop" />
+    <ui:VisualElement style="position: absolute; width: 700px; height: 800px; top: 50%; left: 50%; translate: -350px -400px;">
+        <ui:VisualElement name="ButtonBackground" style="background-image: resource(&apos;Border&apos;); background-color: rgba(56, 56, 56, 0.95); -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4; -unity-background-image-tint-color: rgb(168, 168, 168); -unity-background-scale-mode: stretch-to-fill; position: relative; flex-grow: 1; flex-direction: column;">
+            <ui:VisualElement style="flex-direction: row; min-height: 100px;">
+                <ui:Label text="РЕЗЕРВЫ" display-tooltip-when-elided="true" class="label-color" style="font-size: 50px; -unity-text-align: middle-center; flex-shrink: 1; flex-grow: 1; margin-left: 80px; -unity-font-style: normal;" />
+                <ui:VisualElement style="margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;">
+                    <ui:Button text="X" display-tooltip-when-elided="true" name="CloseButton" style="position: relative; width: 50px; height: 50px; background-image: resource(&apos;Border&apos;); -unity-slice-left: 4; -unity-slice-top: 4; -unity-slice-right: 4; -unity-slice-bottom: 4; background-color: rgb(0, 0, 0); -unity-font-style: bold; font-size: 35px; flex-shrink: 0; flex-grow: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; -unity-background-image-tint-color: rgb(168, 168, 168); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:VisualElement style="width: 50%; padding-left: 35px; padding-right: 35px; padding-top: 35px; padding-bottom: 35px; align-items: center;">
+                    <ui:Label text="МЕДПАКЕТ" display-tooltip-when-elided="true" class="label-color" style="font-size: 30px; -unity-text-align: upper-center; color: rgb(219, 219, 219);" />
+                    <ui:VisualElement style="background-image: resource(&apos;Medpack&apos;); min-width: 256px; min-height: 256px;" />
+                    <ui:Label text="50" display-tooltip-when-elided="true" name="MedpackValue" style="font-size: 30px; -unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+                    <ui:Label text="При использовании в бою востанавливает 30 очков здоровья." display-tooltip-when-elided="true" name="Description" class="description-label" style="-unity-background-image-tint-color: rgb(224, 224, 224);" />
+                    <ui:VisualElement name="Space" style="flex-grow: 1; height: 200px;" />
+                    <ui:Button display-tooltip-when-elided="true" name="MedpackButton" style="flex-direction: column; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; height: 70px; justify-content: center; align-items: center; width: 256px;">
+                        <ui:VisualElement name="Title" style="flex-direction: row; justify-content: center;">
+                            <ui:VisualElement name="MedpackCostIcon" style="background-image: resource(&apos;Credit&apos;); -unity-background-image-tint-color: rgb(0, 0, 0); flex-grow: 0; flex-shrink: 1; min-width: 40px; min-height: 40px;" />
+                            <ui:Label text="100" display-tooltip-when-elided="true" name="MedpackCost" style="font-size: 30px; color: rgb(0, 0, 0);" />
+                        </ui:VisualElement>
+                    </ui:Button>
+                </ui:VisualElement>
+                <ui:VisualElement style="width: 50%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 35px; padding-right: 35px; padding-top: 35px; padding-bottom: 35px; align-items: center;">
+                    <ui:Label text="БРОНЕПЛАСТИНЫ" display-tooltip-when-elided="true" name="Title" class="label-color" style="font-size: 30px; -unity-text-align: upper-center; color: rgb(219, 219, 219);" />
+                    <ui:VisualElement name="Icon" style="background-image: resource(&apos;ArmorPlate&apos;); min-width: 256px; min-height: 256px;" />
+                    <ui:Label text="25" display-tooltip-when-elided="true" name="ArmorPlateValue" style="font-size: 30px; -unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+                    <ui:Label text="При использовании в бою востанавливает весь запас брони." display-tooltip-when-elided="true" name="Description" class="description-label" style="-unity-background-image-tint-color: rgb(224, 224, 224);" />
+                    <ui:VisualElement name="Space" style="flex-grow: 1; flex-shrink: 1; height: 200px;" />
+                    <ui:Button display-tooltip-when-elided="true" name="ArmorPlateButton" style="flex-direction: column; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; height: 70px; align-items: center; justify-content: center; width: 256px;">
+                        <ui:VisualElement name="Title" style="flex-direction: row; justify-content: center;">
+                            <ui:VisualElement name="ArmorPlateCostIcon" style="background-image: resource(&apos;Coin&apos;); -unity-background-image-tint-color: rgb(0, 0, 0); flex-grow: 0; flex-shrink: 1; min-width: 40px; min-height: 40px;" />
+                            <ui:Label text="100" display-tooltip-when-elided="true" name="ArmorPlateCost" style="font-size: 30px; color: rgb(0, 0, 0);" />
+                        </ui:VisualElement>
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
