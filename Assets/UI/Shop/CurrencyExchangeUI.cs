@@ -34,7 +34,7 @@ public class CurrencyExchangeUI : MonoBehaviour, IDisplayedElement
         _creditResultValue = _rootVisualElement.Q<Label>(_creditResultValueName);
 
         Label coinToCreditRate = _rootVisualElement.Q<Label>(_coinToCreditRateName);
-        coinToCreditRate.text = StringExt.FormatAfterThree(GameModel.CoinToCreditRate);
+        coinToCreditRate.text = StringExt.ToPriceStyle(GameModel.CoinToCreditRate);
 
         _valueFieldElement = _rootVisualElement.Q<TextField>(_valueFieldName);
         _valueFieldElement.RegisterCallback<ChangeEvent<string>>(FieldValueChange);
@@ -58,21 +58,21 @@ public class CurrencyExchangeUI : MonoBehaviour, IDisplayedElement
             Hide();
     }
 
-    private void FieldValueChange(ChangeEvent<string> v)
+    private void FieldValueChange(ChangeEvent<string> fieldEvent)
     {
-        if (string.IsNullOrEmpty(v.newValue))
+        if (string.IsNullOrEmpty(fieldEvent.newValue))
         {
             _creditResultValue.text = _zeroResultText;
             return;
         }
 
-        if (int.TryParse(v.newValue, out _coinToConvert))
+        if (int.TryParse(fieldEvent.newValue, out _coinToConvert))
         {
             UpdateUI();
         }
         else
         {
-            _valueFieldElement.value = v.newValue.Remove(v.newValue.Length - 1);
+            _valueFieldElement.value = fieldEvent.newValue.Remove(fieldEvent.newValue.Length - 1);
         }
     }
 
@@ -99,12 +99,12 @@ public class CurrencyExchangeUI : MonoBehaviour, IDisplayedElement
 
     public void UpdateUI()
     {
-        _coinValue.text = StringExt.FormatAfterThree(GameModel.CoinCount);
-        _creditValue.text = StringExt.FormatAfterThree(GameModel.CreditCount);
+        _coinValue.text = StringExt.ToPriceStyle(GameModel.CoinCount);
+        _creditValue.text = StringExt.ToPriceStyle(GameModel.CreditCount);
 
         _valueFieldElement.value = _coinToConvert.ToString();
 
         var coinToCreditRate = _coinToConvert * GameModel.CoinToCreditRate;        
-        _creditResultValue.text = StringExt.FormatAfterThree(coinToCreditRate);
+        _creditResultValue.text = StringExt.ToPriceStyle(coinToCreditRate);
     }
 }

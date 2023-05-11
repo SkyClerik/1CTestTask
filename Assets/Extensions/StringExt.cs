@@ -1,6 +1,6 @@
 public static class StringExt
 {
-    public static string FormatAfterThree(int value)
+    public static string ToPriceStyle(int value)
     {
         string result = value.ToString();
 

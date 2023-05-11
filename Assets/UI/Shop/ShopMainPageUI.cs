@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
-public class ShopUI : MonoBehaviour
+public class ShopMainPageUI : MonoBehaviour, IDisplayedElement
 {
     [SerializeField]
     private CurrencyExchangeUI _currencyExchange;
@@ -25,10 +25,14 @@ public class ShopUI : MonoBehaviour
     private Label _medpackValue;
     private Label _armorPlateValue;
 
+    public UIDocument GetUiDocument => _main;
+
     private void Awake()
     {
         _main = GetComponent<UIDocument>();
         _rootVisualElement = _main.rootVisualElement;
+        _main.enabled = true;
+        _rootVisualElement.visible = false;
 
         _coinValue = _rootVisualElement.Q<Label>(_coinValueName);
         _creditValue = _rootVisualElement.Q<Label>(_creditValueName);
@@ -41,7 +45,6 @@ public class ShopUI : MonoBehaviour
         reservesButton.clicked += ReservesButton_clicked;
 
         UpdateUI();
-        GameModel.ModelChanged += UpdateUI;
     }
 
     private void CurExcButtonName_clicked()
@@ -49,24 +52,28 @@ public class ShopUI : MonoBehaviour
         if (GameModel.HasRunningOperations)
             return;
 
-        _currentLocalWindow?.Hide();
-        _currencyExchange.Show();
-        _currentLocalWindow = _currencyExchange;
+        ShowLocalWindow(_currencyExchange);
     }
+
     private void ReservesButton_clicked()
     {
         if (GameModel.HasRunningOperations)
             return;
 
+        ShowLocalWindow(_reserves);
+    }
+
+    public void ShowLocalWindow(IDisplayedElement displayedElement)
+    {
         _currentLocalWindow?.Hide();
-        _reserves.Show();
-        _currentLocalWindow = _reserves;
+        _currentLocalWindow = displayedElement;
+        _currentLocalWindow.Show();
     }
 
     private void UpdateUI()
     {
-        _coinValue.text = StringExt.FormatAfterThree(GameModel.CoinCount);
-        _creditValue.text = StringExt.FormatAfterThree(GameModel.CreditCount);
+        _coinValue.text = StringExt.ToPriceStyle(GameModel.CoinCount);
+        _creditValue.text = StringExt.ToPriceStyle(GameModel.CreditCount);
 
         _medpackValue.text = GameModel.GetConsumableCount(GameModel.ConsumableTypes.Medpack).ToString();
         _armorPlateValue.text = GameModel.GetConsumableCount(GameModel.ConsumableTypes.ArmorPlate).ToString();
@@ -75,5 +82,22 @@ public class ShopUI : MonoBehaviour
     private void OnDestroy()
     {
         GameModel.ModelChanged -= UpdateUI;
+    }
+
+    public void Show()
+    {
+        if (_rootVisualElement.visible)
+            return;
+
+        UpdateUI();
+        GameModel.ModelChanged += UpdateUI;
+        _rootVisualElement.visible = true;
+    }
+
+    public void Hide()
+    {
+        GameModel.ModelChanged -= UpdateUI;
+        _currentLocalWindow?.Hide();
+        _rootVisualElement.visible = false;
     }
 }
